@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jawab soal</title>
+</head>
+<body>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #ffe6e6;
+        }
+        .hidden {
+            display: none;
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Soal: tanggal berapa kita pertama kali ngedate?</h2>
+    <form id="quizForm">
+        <input type="radio" name="answer" value="A"> A) 4 December 2024 <br>
+        <input type="radio" name="answer" value="B"> B) 5 December 2024 <br>
+        <input type="radio" name="answer" value="C"> C) 6 December 2024 <br>
+        <input type="radio" name="answer" value="D"> D) 23 November 2024 <br><br>
+        <button type="button" onclick="checkAnswer()">Submit</button>
+    </form>
+    <p id="message" class="hidden"><a href="index2.html">anjay bener kamu sayang, pencet pesan nya ini</a></p>
+    <script>
+        function checkAnswer() {
+            const answers = document.getElementsByName('answer');
+            let selectedAnswer = "";
+            
+            for (const answer of answers) {
+                if (answer.checked) {
+                    selectedAnswer = answer.value;
+                    break;
+                }
+            }
+            
+            if (selectedAnswer === "C") {
+                document.getElementById("message").style.display = "block";
+            } else {
+                alert("Jawaban salah, coba lagi!");
+            }
+        }
+    </script>
+</body>
+</body>
+</html>
